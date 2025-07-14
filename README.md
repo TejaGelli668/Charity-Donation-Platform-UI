@@ -1,70 +1,202 @@
-# Getting Started with Create React App
+# Charity Donation Platform - Frontend (UI)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A user-friendly and accessible React-based platform designed to simplify and enhance the experience of charitable giving. This frontend serves as the main interface where users can explore and contribute to various charitable causes.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+### User Features
+- **User Registration & Authentication**: Secure user registration and login system
+- **Campaign Browsing**: Explore various charitable campaigns with detailed information
+- **Campaign Creation**: Create and customize fundraising campaigns for charitable causes
+- **Donation Management**: Make secure donations with multiple payment options
+- **User Dashboard**: Personal dashboard to track donations and campaigns
+- **Campaign Management**: View and manage created campaigns
 
-### `npm start`
+### Admin Features
+- **Admin Dashboard**: Comprehensive overview of platform activities
+- **Campaign Approval**: Review and approve user-created campaigns
+- **User Management**: Monitor user registrations and activities
+- **Donation Monitoring**: Track all donation activities across the platform
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React.js**: Frontend framework
+- **React Router**: Client-side routing
+- **Material-UI / CSS**: Styling and UI components
+- **Axios**: HTTP client for API calls
+- **React Context**: State management
+- **JavaScript (ES6+)**: Programming language
 
-### `npm test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── admin/                  # Admin-specific components
+│   ├── AccessDenied.js
+│   ├── AdminCampaignsList.js
+│   ├── AdminDashBoard.js
+│   ├── AdminLogin.js
+│   └── UsersList.js
+├── api/                    # API integration
+│   └── api.js
+├── components/             # Reusable components
+│   ├── CustomSnackbar.js
+│   ├── PrivateRoute.js
+│   ├── footer/
+│   ├── header/
+│   └── layout/
+├── contexts/               # React Context providers
+│   └── AuthContext.js
+├── images/                 # Static images
+├── pages/                  # Page components
+│   ├── campaigns/          # Campaign-related pages
+│   ├── home/              # Home and error pages
+│   ├── login/             # Authentication pages
+│   └── users/             # User-specific pages
+├── App.js                 # Main App component
+├── App.css               # Global styles
+└── index.js              # Entry point
+```
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn package manager
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/TejaGelli668/Charity-Donation-Platform-UI.git
+   cd Charity-Donation-Platform-UI
+   ```
 
-### `npm run eject`
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Environment Configuration**
+   Create a `.env` file in the root directory and add:
+   ```env
+   REACT_APP_API_BASE_URL=your_api_base_url
+   REACT_APP_PAYMENT_GATEWAY_KEY=your_payment_gateway_key
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The application will open at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📜 Available Scripts
 
-## Learn More
+- `npm start`: Runs the app in development mode
+- `npm test`: Launches the test runner
+- `npm run build`: Builds the app for production
+- `npm run eject`: Ejects from Create React App (one-way operation)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌐 Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### AWS Amplify Deployment
 
-### Code Splitting
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Deploy to AWS Amplify**
+   - Navigate to AWS Amplify Console
+   - Click "Create web app"
+   - Upload the `build` folder
+   - Configure domain settings
+   - Deploy and access via provided URL
 
-### Analyzing the Bundle Size
+### Manual Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Build the project using `npm run build`
+2. Upload the `build` folder contents to your web server
+3. Configure your web server to serve the React app
+4. Ensure proper routing configuration for single-page application
 
-### Making a Progressive Web App
+## 🔐 Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The platform implements secure authentication with:
+- JWT token-based authentication
+- Protected routes for authenticated users
+- Role-based access control (User/Admin)
+- Secure password handling
 
-### Advanced Configuration
+## 💳 Payment Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Multiple payment method support
+- Secure payment processing
+- Donation tracking and receipts
+- Refund management system
 
-### Deployment
+## 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application is fully responsive and optimized for:
+- Desktop computers
+- Tablets
+- Mobile devices
+- Various screen sizes and orientations
 
-### `npm run build` fails to minify
+## 🎨 Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Custom CSS for unique design elements
+- Responsive grid system
+- Consistent color scheme and typography
+- Accessible design principles
+
+## 🔧 Configuration
+
+### API Integration
+Update the API base URL in `src/api/api.js` to connect with your backend:
+
+```javascript
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+```
+
+### Route Configuration
+Main routes are configured in `App.js`:
+- `/` - Home page
+- `/login` - User login
+- `/register` - User registration
+- `/dashboard` - User dashboard
+- `/campaigns` - Campaign listing
+- `/admin` - Admin panel
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Support
+
+For support and questions:
+- Create an issue in the GitHub repository
+- Contact the development team
+- Check the documentation for common solutions
+
+## 🔮 Future Enhancements
+
+- Real-time notifications
+- Advanced campaign analytics
+- Social media integration
+- Mobile application
+- Multi-language support
+- Enhanced payment options
+
+---
+
+**Built with ❤️ for making charitable giving accessible to everyone**
